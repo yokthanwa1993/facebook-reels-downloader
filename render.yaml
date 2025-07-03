@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: facebook-reels-downloader
+    runtime: python
+    repo: https://github.com/yokthanwa1993/facebook-reels-downloader
+    plan: free
+    branch: master
+    buildFilter:
+      paths:
+      - "app.py"
+      - "requirements.txt"
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.5 # You can specify a Python version
+    build_command: "pip install -r requirements.txt"
+    start_command: "gunicorn app:app" 

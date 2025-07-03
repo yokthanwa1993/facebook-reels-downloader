@@ -1,0 +1,5 @@
+firebase-functions
+firebase-admin
+Flask
+yt-dlp
+requests
